@@ -105,3 +105,7 @@ body.addEventListener("keydown", (e) =>
     // ? body.style.background = "#" + randomColor
     // : body.style.background = "none"
 })
+
+// Small message box with instructions
+const messageEl = document.querySelector("#message-el")
+messageEl.textContent = ["Press any of the following keys: " + validKeys + " 🥁"]

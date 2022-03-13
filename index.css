@@ -1,0 +1,22 @@
+body
+{
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    padding: 10px;
+}
+
+p
+{
+    font-family: "Poppins", sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    margin: 0;
+}
+
+#message-box
+{
+    background: rgb(219, 219, 219);
+    padding: 10px 20px;
+    border-radius: 5px;
+}
