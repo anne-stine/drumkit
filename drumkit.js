@@ -22,6 +22,9 @@ let validKeys = ["1", "2", "3", "4", "5", "6", "7", "8"]
 // Define the body as the html body 
 const body = document.querySelector("body")
 
+// Text element that shows name of sound effect
+const textEl = document.querySelector("#text-el")
+
 // Listen for keydown events
 body.addEventListener("keydown", (e) =>
 {
@@ -30,38 +33,47 @@ body.addEventListener("keydown", (e) =>
         // Play drum sounds when user presses any valid key from the validKeys array
         case validKeys[0]: // Clap
             drum.clap.play()
+            textEl.textContent = "Clap"
             break
 
         case validKeys[1]: // Hihat
             drum.hihat.play()
+            textEl.textContent = "Hi-hat"
             break
 
         case validKeys[2]: // Kick
             drum.kick.play()
+            textEl.textContent = "Kick"
             break
 
         case validKeys[3]: // Openhat
             drum.openhat.play()
+            textEl.textContent = "Open hat"
             break
 
         case validKeys[4]: // Ride
             drum.ride.play()
+            textEl.textContent = "Ride"
             break
 
         case validKeys[5]: // Snare
             drum.snare.play()
+            textEl.textContent = "Snare"
             break
 
         case validKeys[6]: // Tink
             drum.tink.play()
+            textEl.textContent = "Tink"
             break
 
         case validKeys[7]: // Tom
             drum.tom.play()
+            textEl.textContent = "Tom"
             break
 
         default: // Return a message if user presses invalid keys
             console.log("Press any of the following keys: " + validKeys)
+            textEl.textContent = ""
     }
 
     // Generate random background color when pressing any key from the validKeys array
