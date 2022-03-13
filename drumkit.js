@@ -69,7 +69,7 @@ body.addEventListener("keydown", (e) =>
     const randomColor = "#" + Math.floor(Math.random()*16777215).toString(16)
     e.key <= validKeys.length
     ? body.style.background = randomColor
-    : body.style.background = "none"
+    : body.style.background = body.style.background
 
     // 4 // Not working
     // const randomColor = Math.floor(Math.random()*16777215).toString(16)
