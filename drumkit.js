@@ -16,14 +16,17 @@ class Drumkit
 // Simplify name with a const so that it can more easily be reffered to later
 const drum = new Drumkit()
 
-// Array to store all valid keydowns to give flexibility of potentially changing keys
-let validKeys = ["1", "2", "3", "4", "5", "6", "7", "8"]
-
 // Define the body as the html body 
 const body = document.querySelector("body")
 
 // Text element that shows name of sound effect
 const textEl = document.querySelector("#text-el")
+
+// Array to store all valid keydowns to give flexibility of potentially changing keys
+let validKeys = ["1", "2", "3", "4", "5", "6", "7", "8"]
+
+// Background colors
+let colorArray = ["AliceBlue", "Coral", "Crimson", "Yellow", "Lavender", "Chartreuse", "Fuchsia", "PaleGreen"]
 
 // Listen for keydown events
 body.addEventListener("keydown", (e) =>
@@ -32,90 +35,65 @@ body.addEventListener("keydown", (e) =>
     {
         // Play drum sounds when user presses any valid key from the validKeys array
         case validKeys[0]: // Clap
+            drum.clap.currentTime = 0
             drum.clap.play()
             textEl.textContent = "Clap"
+            body.style.background = colorArray[0]
             break
 
         case validKeys[1]: // Hihat
             drum.hihat.play()
             textEl.textContent = "Hi-hat"
+            body.style.background = colorArray[1]
             break
 
         case validKeys[2]: // Kick
+            drum.kick.currentTime = 0
             drum.kick.play()
             textEl.textContent = "Kick"
+            body.style.background = colorArray[2]
             break
 
         case validKeys[3]: // Openhat
+            drum.openhat.currentTime = 0
             drum.openhat.play()
             textEl.textContent = "Open hat"
+            body.style.background = colorArray[3]
             break
 
         case validKeys[4]: // Ride
+            drum.ride.currentTime = 0
             drum.ride.play()
             textEl.textContent = "Ride"
+            body.style.background = colorArray[4]
             break
 
         case validKeys[5]: // Snare
+            drum.snare.currentTime = 0
             drum.snare.play()
             textEl.textContent = "Snare"
+            body.style.background = colorArray[5]
             break
 
         case validKeys[6]: // Tink
+            drum.tink.currentTime = 0
             drum.tink.play()
             textEl.textContent = "Tink"
+            body.style.background = colorArray[6]
             break
 
         case validKeys[7]: // Tom
+            drum.tom.currentTime = 0
             drum.tom.play()
             textEl.textContent = "Tom"
+            body.style.background = colorArray[7]
             break
 
         default: // Return a message if user presses invalid keys
             console.log("Press any of the following keys: " + validKeys)
             textEl.textContent = ""
+            body.style.background = body.style.background
     }
-
-    // Generate random background color when pressing any key from the validKeys array
-    // 5 // Adding a validKeys array also solved this problem
-    const randomColor = "#" + Math.floor(Math.random()*16777215).toString(16)
-    e.key <= validKeys.length
-    ? body.style.background = randomColor
-    : body.style.background = body.style.background
-
-    // 4 // Not working
-    // const randomColor = Math.floor(Math.random()*16777215).toString(16)
-    // Audio.play == true
-    // ? body.style.background = "#" + randomColor
-    // : body.style.background = "none"
-
-    // 3 // Changes color on all keydowns
-    // if (Audio.play = true)
-    // {
-    //     const randomColor = Math.floor(Math.random()*16777215).toString(16)
-    //     body.style.background = "#" + randomColor
-    // }
-
-    // 2 // Not working
-    // Audio.onplay = () =>
-    // {
-    //     const randomColor = Math.floor(Math.random()*16777215).toString(16)
-    //     body.style.background = "#" + randomColor
-    //     console.log("working")
-    // }
-
-    // 1 // Works, but not a very dynamic method
-    // const randomColor = Math.floor(Math.random()*16777215).toString(16)
-    // e.key === "1" || 
-    // e.key === "2" || 
-    // e.key === "3" ||
-    // e.key === "4" || 
-    // e.key === "5" || 
-    // e.key === "6" ||
-    // e.key === "7" || 
-    // e.key === "8"
-    // ? body.style.background = "#" + randomColor
-    // : body.style.background = "none"
 })
 
 // Small message box with instructions
