@@ -98,4 +98,4 @@ body.addEventListener("keydown", (e) =>
 
 // Small message box with instructions
 const messageEl = document.querySelector("#message-el")
-messageEl.textContent = ["Press any of the following keys: " + validKeys.join(", ") + " 🥁"]
+messageEl.textContent = ["Press any of the following keys: " + validKeys.join(", ")]
